@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function useCountries() {
+export default function useCountries(url) {
 	const [loading, setLoading] = useState(true);
 	const [countries, setCountries] = useState([]);
 
-	fetch("https://restcountries.com/v3.1/all")
-		.then(res => res.json())
-		.then(data => setCountries(data))
-		.catch(err => setCountries("Error"))
-		.finally(() => setLoading(false));
+	useEffect(() => {
+		fetch(url)
+			.then(res => res.json())
+			.then(data => setCountries(data))
+			.catch(() => setCountries("Error"))
+			.finally(() => setLoading(false));
+	}, [url]);
 
-	return { loading, countries };
+	return [loading, countries];
 }
