@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import './App.css'
+import './App.css';
+import useCountries from './hooks/useCountries';
 
 function App() {
+	const info = useCountries();
+	console.log(info);
 
 	fetch("https://restcountries.com/v3.1/all")
 		.then(res => res.json())
@@ -10,6 +13,7 @@ function App() {
 	return (
 		<div className="App">
 			<h2>Hello World!</h2>
+			{/* https://restcountries.com*/}
 		</div>
 	)
 }
