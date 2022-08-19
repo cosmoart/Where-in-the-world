@@ -8,7 +8,7 @@ export default function Cards({ countries, MAX_PAGES }) {
 					<ul>
 						<li>Population: {item.population}</li>
 						<li>Region: {item.region}</li>
-						<li>Capital: {item.capital[0]}</li>
+						<li>Capital: {item.capital || "Without name"}</li>
 					</ul>
 				</article>
 			)
