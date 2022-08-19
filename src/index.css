@@ -7,3 +7,22 @@
 img {
 	max-width: 100%;
 }
+
+.countryCard {
+	background: gray;
+	cursor: pointer;
+}
+
+.countryCard:hover {
+	transform: scale(1.05);
+}
+
+.navBar {
+	z-index: 10;
+	position: sticky;
+	top: 1rem;
+	display: flex;
+	justify-content: space-between;
+	background: gray;
+	transition: top .2s ease-in-out;
+}

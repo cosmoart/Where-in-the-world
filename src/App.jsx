@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Cards from './components/Cards';
+import CountriesForm from './components/CountriesForm';
+import Header from './components/Header';
 import useCountries from './hooks/useCountries';
 
 function App() {
@@ -24,35 +26,10 @@ function App() {
 		}
 	}, []);
 
-	function handleRegion(e) {
-		console.log(e.target.value);
-	}
-
-	function handleSearch(e) {
-		e.prevendDefault();
-		console.log(e.target.value);
-	}
-
 	return (
 		<>
-			<header>
-				<h1>Where in the World?</h1>
-				<button>Dark Mode</button>
-			</header>
-			<form>
-				<div>
-					<input type="search" name="country" placeholder='Search for a country...' onChange={handleSearch} />
-					<button aria-label='Search' onClick={handleSearch}></button>
-				</div>
-				<select name="region" onChange={handleRegion}>
-					<option value="" defaultValue hidden>Filter by Region</option>
-					<option value="africa">Africa</option>
-					<option value="america">America</option>
-					<option value="asia">Asia</option>
-					<option value="europe">Europe</option>
-					<option value="oceania">Oceania</option>
-				</select>
-			</form>
+			<Header />
+			<CountriesForm />
 			{
 				loading
 					? <h1>Loading...</h1>
