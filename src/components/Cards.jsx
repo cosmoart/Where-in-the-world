@@ -1,14 +1,13 @@
 export default function Cards({ countries, MAX_PAGES }) {
 
-	function handleCard(e) {
-		e.stopPropagation()
-		console.log(e.target.id);
+	function handleCard(card) {
+		console.log(card);
 	}
 
 	return countries.map((item, index) => {
 		if (index < MAX_PAGES) {
 			return (
-				<article key={index + 105} className="countryCard" onClick={handleCard} id={item.name.common}>
+				<article key={index + 105} className="countryCard" onClick={() => handleCard(item.name.common)} id={item.name.common}>
 					<img src={item.flags.svg} alt={item.name.common + " flag"} />
 					<h3>{item.name.common}</h3>
 					<ul>
