@@ -35,7 +35,6 @@ function App() {
 		<>
 			<Header />
 			<CountriesForm />
-			<CountryDetails countries={countries} />
 			{
 				loading
 					? <h1>Loading...</h1>
@@ -43,6 +42,7 @@ function App() {
 						<Cards countries={countries} MAX_PAGES={maxPages} />
 					</div>
 			}
+			<CountryDetails countries={countries} />
 		</>
 	)
 }
