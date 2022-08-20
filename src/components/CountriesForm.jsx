@@ -7,9 +7,9 @@ export default function CountriesForm() {
 		e.prevendDefault();
 	}
 	return (
-		<form>
+		<form className="flex justify-between p-4">
 			<div>
-				<input type="search" name="country" placeholder='Search for a country...' onChange={handleSearch} />
+				<input type="search" name="country" placeholder='Search for a country...' onChange={handleSearch} className="p-2" />
 				<button aria-label='Search' onClick={handleSearch}></button>
 			</div>
 			<select name="region" onChange={handleRegion}>

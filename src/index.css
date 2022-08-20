@@ -2,26 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.flagsList {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: 1rem;
-}
+@layer base {
+	@font-face {
+		font-family: Nunito Sans;
+		src: url("./assets/fonts/NunitoSans-Light.ttf");
+		font-weight: 300;
+	}
 
-img {
-	max-width: 100%;
-}
+	@font-face {
+		font-family: Nunito Sans;
+		font-weight: 600;
+		src: url("./assets/fonts/NunitoSans-SemiBold.ttf");
+	}
 
-.countryCard:hover {
-	transform: scale(1.05);
-}
-
-.navBar {
-	z-index: 10;
-	position: sticky;
-	top: 1rem;
-	display: flex;
-	justify-content: space-between;
-	background: gray;
-	transition: top .2s ease-in-out;
+	@font-face {
+		font-family: Nunito Sans;
+		font-weight: 800;
+		src: url("./assets/fonts/NunitoSans-ExtraBold.ttf");
+	}
 }

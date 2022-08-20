@@ -8,8 +8,8 @@ document.addEventListener("scroll", () => {
 
 export default function Header() {
 	return (
-		<header className='navBar'>
-			<h1>Where in the World?</h1>
+		<header className='navBar sticky z-10 top-0 flex justify-between bg-slate-500 p-4 transition-all'>
+			<h1 className="text-2xl font-extrabold">Where in the World?</h1>
 			<button>Dark Mode</button>
 		</header>
 	)

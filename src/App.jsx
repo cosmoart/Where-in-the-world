@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-import './App.css';
 import Cards from './components/Cards';
 import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/countryDetails';
@@ -38,9 +37,9 @@ function App() {
 			{
 				loading
 					? <h1>Loading...</h1>
-					: <div className="flagsList">
+					: <main className="flagsList grid gap-4 grid-cols-fill p-4">
 						<Cards countries={countries} MAX_PAGES={maxPages} />
-					</div>
+					</main>
 			}
 			<CountryDetails countries={countries} />
 		</>
