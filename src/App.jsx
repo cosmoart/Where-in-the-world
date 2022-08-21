@@ -4,6 +4,7 @@ import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/countryDetails';
 import Header from './components/Header';
 import useCountries from './hooks/useCountries';
+import Loader from "./components/Loader"
 
 function App() {
 	const MAX_PAGES = 24;
@@ -31,12 +32,12 @@ function App() {
 			<CountriesForm />
 			{
 				loading
-					? <h1>Loading...</h1>
+					? <Loader />
 					: <main className="flagsList grid gap-10 grid-cols-fill p-7">
 						<Cards countries={countries} MAX_PAGES={maxPages} />
 					</main>
 			}
-			<CountryDetails countries={countries} />
+			{/* <CountryDetails countries={countries} /> */}
 		</>
 	)
 }
