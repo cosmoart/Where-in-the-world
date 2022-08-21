@@ -10,7 +10,7 @@ document.addEventListener("scroll", () => {
 
 export default function Header() {
 	return (
-		<header className='navBar sticky z-10 top-0 flex justify-between bg-slate-500 p-4 transition-all'>
+		<header className='bg-white dark:bg-darkblue navBar sticky z-10 top-0 flex justify-between p-4 transition-all shadow-3xl'>
 			<h1 className="text-2xl font-extrabold">Where in the World?</h1>
 			<ThemeBtn />
 		</header>

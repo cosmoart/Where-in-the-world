@@ -1,16 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Cards from './components/Cards';
 import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/countryDetails';
 import Header from './components/Header';
 import useCountries from './hooks/useCountries';
-import ThemeContext, { ThemeProvider } from './context/themeContext';
 
 function App() {
-	console.clear()
-	// const { theme, handleTheme } = useContext(ThemeContext);
-	console.log(ThemeContext);
-
 	const MAX_PAGES = 24;
 	const [maxPages, setMaxPages] = useState(MAX_PAGES);
 
@@ -37,7 +32,7 @@ function App() {
 			{
 				loading
 					? <h1>Loading...</h1>
-					: <main className="flagsList grid gap-4 grid-cols-fill p-4">
+					: <main className="flagsList grid gap-10 grid-cols-fill p-7">
 						<Cards countries={countries} MAX_PAGES={maxPages} />
 					</main>
 			}

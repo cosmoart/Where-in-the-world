@@ -5,6 +5,12 @@ export default function ThemeBtn() {
 	console.log(theme);
 	document.documentElement.classList[theme === "dark" ? "add" : "remove"]("dark")
 
+	// if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+	// 	document.documentElement.classList.add('dark')
+	// } else {
+	// 	document.documentElement.classList.remove('dark')
+	// }
+
 	if (!localStorage.getItem("theme")) {
 		const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		localStorage.setItem("theme", defaultDark ? 'dark' : 'light');
