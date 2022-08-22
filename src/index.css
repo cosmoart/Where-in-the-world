@@ -20,4 +20,13 @@
 		font-weight: 800;
 		src: url("./assets/fonts/NunitoSans-ExtraBold.ttf");
 	}
+
+	:focus-visible {
+		outline: 3px dashed rgb(56, 189, 248);
+		outline-offset: 4px;
+	}
+
+	.absolute-center {
+		@apply absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
+	}
 }

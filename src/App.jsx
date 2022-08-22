@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Cards from './components/Cards';
 import CountriesForm from './components/CountriesForm';
-import CountryDetails from './components/countryDetails';
+import CountryDetails from './components/CountryDetails';
 import Header from './components/Header';
 import useCountries from './hooks/useCountries';
 import Loader from "./components/Loader"
@@ -19,9 +19,7 @@ function App() {
 				setMaxPages(maxPages + MAX_PAGES);
 				console.log("Bottom");
 				busy = true;
-				setTimeout(() => {
-					busy = false;
-				}, 600);
+				setTimeout(() => busy = false, 600);
 			}
 		}
 	}, []);
@@ -33,11 +31,18 @@ function App() {
 			{
 				loading
 					? <Loader />
-					: <main className="flagsList grid gap-10 grid-cols-fill p-7">
+					: <main className="flagsList grid gap-11 grid-cols-fill p-7">
 						<Cards countries={countries} MAX_PAGES={maxPages} />
 					</main>
 			}
-			{/* <CountryDetails countries={countries} /> */}
+			{/* <CountryDetails country={countries} /> */}
+
+			<footer className="p-5 text-right absolute bottom-0 w-full">
+				<p>
+					Made with ♥️ by <a href="https://github.com/cosmoart" target="_blank" rel="noopener noreferrer" className="text-sky-400 font-semibold">Cosmo</a>
+				</p>
+			</footer>
+
 		</>
 	)
 }

@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 
 export default function useCountries(url) {
-	// https://restcountries.com/v3.1/region/{region}
-	// https://restcountries.com/v3.1/name/{name}
-
 	const [loading, setLoading] = useState(true);
 	const [countries, setCountries] = useState([]);
 

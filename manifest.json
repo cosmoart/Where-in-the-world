@@ -1,0 +1,17 @@
+{
+	"name": "Where in the World?",
+	"short_name": "World Countries",
+	"description": "My App description",
+	"lang": "en-US",
+	"icons": [
+		{
+			"src": "src/assets/favicon/earth-icon.svg",
+			"type": "image/svg"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"orientation": "portrait-primary",
+	"background_color": "#ffffff",
+	"theme_color": "#ffffff"
+}
