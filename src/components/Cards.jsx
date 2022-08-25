@@ -1,7 +1,9 @@
-export default function Cards({ countries, MAX_PAGES }) {
+import CountryDetails from "./countryDetails"
+
+export default function Cards({ countries, MAX_PAGES, setCountry }) {
 
 	function handleCard(card) {
-		console.log(card);
+		setCountry(card);
 	}
 
 	if (countries !== "Error") {
@@ -9,7 +11,7 @@ export default function Cards({ countries, MAX_PAGES }) {
 
 			if (index < MAX_PAGES) {
 				return (
-					<article key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-3xl" onClick={() => handleCard(item.name.common)}>
+					<article key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-3xl" onClick={() => handleCard(item)}>
 						<img src={item.flags.svg} alt={item.name.common + " flag"} className="h-1/2 object-cover w-full" loading="lazy" />
 						<section className="p-6 h-1/2">
 							<h3 className="font-extrabold text-2xl my-3">{item.name.common}</h3>
@@ -31,5 +33,3 @@ export default function Cards({ countries, MAX_PAGES }) {
 		)
 	}
 }
-
-// 1450 => 0541 => 054 1 => 1

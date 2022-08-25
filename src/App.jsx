@@ -3,14 +3,30 @@ import Cards from './components/Cards';
 import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/CountryDetails';
 import Header from './components/Header';
-import useCountries from './hooks/useCountries';
+// import getCountries from './helpers/getCountries';
 import Loader from "./components/Loader"
 
 function App() {
 	const MAX_PAGES = 24;
+
 	const [maxPages, setMaxPages] = useState(MAX_PAGES);
 
-	const [loading, countries] = useCountries("https://restcountries.com/v3.1/all");
+	const [loading, setLoading] = useState(true);
+	const [countries, setCountries] = useState([]);
+	const [country, setCountry] = useState();
+
+	function getCountries(url) {
+		fetch(url)
+			.then(res => res.json())
+			.then(data => setCountries(data))
+			.catch(() => setCountries("Error"))
+			.finally(() => setLoading(false));
+	}
+
+
+	useEffect(() => {
+		getCountries("https://restcountries.com/v3.1/all")
+	}, []);
 
 	useEffect(() => {
 		let busy = false;
@@ -28,14 +44,14 @@ function App() {
 		<>
 			<Header />
 			<CountriesForm />
+			{country && <CountryDetails country={country} />}
 			{
 				loading
 					? <Loader />
 					: <main className="flagsList grid gap-11 grid-cols-fill p-7">
-						<Cards countries={countries} MAX_PAGES={maxPages} />
+						<Cards countries={countries} MAX_PAGES={maxPages} setCountry={setCountry} />
 					</main>
 			}
-			{/* <CountryDetails country={countries} /> */}
 
 			<footer className="p-5 text-right absolute bottom-0 w-full">
 				<p>

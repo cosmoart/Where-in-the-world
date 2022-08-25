@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import useCountries from "../hooks/useCountries";
+import useCountries from "../helpers/getCountries";
 
 export default function CountriesForm() {
 	const SearchInput = useRef();
@@ -10,7 +10,7 @@ export default function CountriesForm() {
 
 	function handleRegion(e) {
 		console.log(e.target.value);
-		// const [loading, countries] = useCountries("https://restcountries.com/v3.1/region/" + e.target.value);
+
 	}
 
 	function handleSearch(e) {
