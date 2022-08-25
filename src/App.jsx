@@ -3,7 +3,6 @@ import Cards from './components/Cards';
 import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/CountryDetails';
 import Header from './components/Header';
-// import getCountries from './helpers/getCountries';
 import Loader from "./components/Loader"
 
 function App() {
@@ -16,6 +15,7 @@ function App() {
 	const [country, setCountry] = useState();
 
 	function getCountries(url) {
+		setLoading(true);
 		fetch(url)
 			.then(res => res.json())
 			.then(data => setCountries(data))
@@ -43,7 +43,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			<CountriesForm />
+			<CountriesForm getCountries={getCountries} />
 			{country && <CountryDetails country={country} />}
 			{
 				loading

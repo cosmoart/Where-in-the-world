@@ -1,5 +1,3 @@
-import CountryDetails from "./countryDetails"
-
 export default function Cards({ countries, MAX_PAGES, setCountry }) {
 
 	function handleCard(card) {
