@@ -43,8 +43,8 @@ function App() {
 	return (
 		<>
 			<Header />
-			<CountriesForm getCountries={getCountries} />
 			{country && <CountryDetails country={country} />}
+			<CountriesForm getCountries={getCountries} />
 			{
 				loading
 					? <Loader />
@@ -58,7 +58,12 @@ function App() {
 					Made with ♥️ by <a href="https://github.com/cosmoart" target="_blank" rel="noopener noreferrer" className="text-sky-400 font-semibold">Cosmo</a>
 				</p>
 			</footer>
-
+			{/* <Router>
+				<Routes>
+					<Route exact path='/:country' element={<h3>Home</h3>} />
+					<Route path='*' element={<h3>Error 404</h3>} />
+				</Routes>
+			</Router > */}
 		</>
 	)
 }

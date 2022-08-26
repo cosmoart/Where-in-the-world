@@ -5,7 +5,7 @@
 	"lang": "en-US",
 	"icons": [
 		{
-			"src": "src/assets/favicon/earth-icon.svg",
+			"src": "src/assets/favicon/favicon.svg",
 			"type": "image/svg"
 		}
 	],

@@ -16,10 +16,10 @@ export default function CountryDetails({ country }) {
 	}
 
 	return (
-		<div className="overflow-hidden w-full h-screen absolute pointer-events-none">
-			<section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full dark:bg-verydarkblue pointer-events-auto`}>
+		<div className="fixed overflow-hidden w-full h-screen pointer-events-none z-50">
+			<section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full dark:bg-verydarkblue pointer-events-auto h-full p-10`}>
 				<button className="p-3 dark:bg-darkblue rounded-[4px] hover:opacity-80 active:scale-95" onClick={handleBack}>Back</button>
-				<article className="flex justify-center gap-6 p-8 items-center flex-col sm:flex-row">
+				<article className="flex justify-center gap-6 items-center flex-col sm:flex-row">
 					<img src={country.flags.svg} alt={country.name.common + " flag"} className="sm:w-1/2" />
 					<div className="sm:w-1/2 p-5">
 						<h2 className="font-bold text-2xl my-8">{country.name.common}</h2>
