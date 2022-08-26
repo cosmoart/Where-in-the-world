@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 
-export default function CountryDetails({ country }) {
+export default function CountryDetails({ country, setCountry }) {
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
 		setShow(true);
 		document.title = `${country.name.common} - Where in the World?`
-		document.querySelector("link[rel~='icon']").href = country.flags.svg || "src/assets/favicon/favicon.svg"
+		document.querySelector("link[rel~='icon']").href = country.flags.svg || "src/assets/favicon/favicon.svg";
 	}, [country])
 
 	function handleBack() {
 		setShow(false);
 		document.title = `Where in the World?`;
 		document.querySelector("link[rel~='icon']").href = "src/assets/favicon/favicon.svg"
+		setCountry("");
 	}
 
 	return (

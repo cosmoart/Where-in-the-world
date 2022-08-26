@@ -3,7 +3,8 @@ import { useState } from "react";
 export default function ThemeBtn() {
 	const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
-	document.documentElement.classList[theme === "dark" ? "add" : "remove"]("dark")
+	document.documentElement.classList[theme === "dark" ? "add" : "remove"]("dark");
+	document.querySelector("meta[name='theme-color']").content = theme === "dark" ? "#2b3238" : "#ffffff"
 
 	if (!localStorage.theme) {
 		const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -12,7 +13,8 @@ export default function ThemeBtn() {
 	}
 
 	function handleThemeToggle() {
-		document.documentElement.classList[theme === "dark" ? "remove" : "add"]("dark")
+		document.documentElement.classList[theme === "dark" ? "remove" : "add"]("dark");
+		document.querySelector("meta[name='theme-color']").content = theme === "dark" ? "#ffffff" : "#2b3238"
 		localStorage.setItem("theme", theme === "dark" ? "light" : "dark")
 		setTheme(localStorage.theme);
 	}

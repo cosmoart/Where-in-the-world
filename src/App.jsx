@@ -43,7 +43,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			{country && <CountryDetails country={country} />}
+			{country && <CountryDetails country={country} setCountry={setCountry} />}
 			<CountriesForm getCountries={getCountries} />
 			{
 				loading
