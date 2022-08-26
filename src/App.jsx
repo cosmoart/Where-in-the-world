@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cards from './components/Cards';
 import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/CountryDetails';
@@ -44,6 +45,13 @@ function App() {
 		<>
 			<Header />
 			{country && <CountryDetails country={country} setCountry={setCountry} />}
+			<Router>
+				<Routes>
+					<Route path='/' element={<h3>Home</h3>} />
+					<Route path='/:countryURL' element={<CountryDetails />} />
+					<Route path='*' element={<h3>Error 404</h3>} />
+				</Routes>
+			</Router>
 			<CountriesForm getCountries={getCountries} />
 			{
 				loading
@@ -52,18 +60,11 @@ function App() {
 						<Cards countries={countries} MAX_PAGES={maxPages} setCountry={setCountry} />
 					</main>
 			}
-
 			<footer className="p-5 text-right absolute bottom-0 w-full">
 				<p>
 					Made with ♥️ by <a href="https://github.com/cosmoart" target="_blank" rel="noopener noreferrer" className="text-sky-400 font-semibold">Cosmo</a>
 				</p>
 			</footer>
-			{/* <Router>
-				<Routes>
-					<Route exact path='/:country' element={<h3>Home</h3>} />
-					<Route path='*' element={<h3>Error 404</h3>} />
-				</Routes>
-			</Router > */}
 		</>
 	)
 }
