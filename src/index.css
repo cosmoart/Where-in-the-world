@@ -30,3 +30,38 @@
 		@apply absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
 	}
 }
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+.dark ::-webkit-scrollbar-track {
+	background-color: #2a3947;
+	transition: background-color 3s ease-in-out;
+}
+
+::-webkit-scrollbar-track {
+	background: #c5c5c5;
+}
+
+/* Handle */
+.dark ::-webkit-scrollbar-thumb {
+	background: rgb(233, 233, 233);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: rgb(97, 97, 97);
+}
+
+/* Handle on hover */
+.dark ::-webkit-scrollbar-thumb:hover {
+	background: rgb(182, 182, 182);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(146, 146, 146);
+}

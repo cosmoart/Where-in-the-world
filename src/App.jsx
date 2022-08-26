@@ -24,12 +24,8 @@ function App() {
 			.finally(() => setLoading(false));
 	}
 
-
 	useEffect(() => {
-		getCountries("https://restcountries.com/v3.1/all")
-	}, []);
-
-	useEffect(() => {
+		getCountries("https://restcountries.com/v3.1/all");
 		let busy = false;
 		window.onscroll = function (e) {
 			if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !busy) {
