@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 
-export default function CountryDetails({ country, setCountry }) {
+export default function CountryDetails({ country = "", setCountry }) {
 	const [show, setShow] = useState(false);
 	let { countryURL } = useParams();
+
+	document.querySelector("body").style.overflow = country === "" ? "auto" : "hidden";
 
 	useEffect(() => {
 		setShow(true);
@@ -19,9 +21,6 @@ export default function CountryDetails({ country, setCountry }) {
 		document.querySelector("link[rel~='icon']").href = "src/assets/favicon/favicon.svg"
 		setCountry("");
 	}
-
-	console.log(useParams());
-	console.log(countryURL);
 
 	return (
 		<>
