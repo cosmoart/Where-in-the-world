@@ -36,25 +36,19 @@ function App() {
 		getCountries("https://restcountries.com/v3.1/all")
 
 		let busy = false;
-		window.onscroll = function (e) {
+		document.addEventListener("scroll", () => {
 			if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !busy) {
 				setMaxPages(max => max + MAX_PAGES);
 				busy = true;
 				setTimeout(() => busy = false, 600);
 			}
-		}
+		})
 
-		document.body.addEventListener('mousedown', function () {
-			document.body.classList.add('using-mouse');
+		// Show the :active outline only in key down
+		document.body.addEventListener('mousedown', () => document.body.classList.add('using-mouse'));
+		document.body.addEventListener('keydown', (e) => {
+			if (e.key === "Tab") document.body.classList.remove('using-mouse');
 		});
-
-		document.body.addEventListener('keydown', function (event) {
-			if (event.key === "tab") {
-				document.body.classList.remove('using-mouse');
-			}
-		});
-
-
 	}, []);
 
 	return (

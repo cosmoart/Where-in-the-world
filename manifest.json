@@ -9,9 +9,9 @@
 			"type": "image/svg"
 		}
 	],
-	"start_url": "/",
+	"start_url": "./",
 	"display": "standalone",
 	"orientation": "portrait-primary",
-	"background_color": "#ffffff",
-	"theme_color": "#ffffff"
+	"background_color": "#202c37",
+	"theme_color": "#2b3945"
 }
