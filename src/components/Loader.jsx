@@ -1,5 +1,6 @@
+import loaderSVG from "../assets/icons/loader.svg"
 export default function Loader() {
 	return (
-		<img src="src/assets/icons/loader.svg" alt="Loading..." className="w-24 absolute-center" />
+		<img src={loaderSVG} alt="Loading..." className="w-24 absolute-center" />
 	)
 }

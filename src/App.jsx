@@ -22,7 +22,6 @@ function App() {
 			.then(res => res.json())
 			.then(data => {
 				setCountries(data)
-				console.log(countries);
 				if (location.pathname !== "/") {
 					let countryPath = data.find(el => el.name.common.toLowerCase().replace(/ /ig, "-") === location.pathname.slice(1).toLowerCase().replace(/ /ig, "-"));
 					if (countryPath) setCountry(countryPath)
