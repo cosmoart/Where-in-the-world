@@ -7,7 +7,7 @@ module.exports = {
 				"fill": "repeat(auto-fill, minmax(250px, 1fr))"
 			},
 			fontFamily: {
-				"nunito": ["Nunito Sans", "ui-monospace", "SFMono-Regular"]
+				"nunito": ["Nunito Sans", "sans-serif"]
 			},
 			colors: {
 				// 			- Dark Blue(Dark Mode Elements): hsl(209, 23 %, 22 %)

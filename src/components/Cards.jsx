@@ -10,7 +10,7 @@ export default function Cards({ countries, MAX_PAGES, setCountry }) {
 			if (index < MAX_PAGES) {
 				return (
 					<figure key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-3xl" onClick={() => handleCard(item)}>
-						<img src={item.flags.svg} alt={item.name.common + " flag"} className="h-1/2 object-cover w-full" loading="lazy" />
+						<img src={item.flags.svg} alt={item.name.common + " flag"} className="h-1/2 object-cover w-full" />
 						<section className="p-6 h-1/2">
 							<figcaption>
 								<h2 className="font-extrabold text-2xl my-3">{item.name.common}</h2>
