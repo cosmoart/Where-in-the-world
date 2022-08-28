@@ -8,11 +8,13 @@ export default function CountriesForm({ getCountries }) {
 	}
 
 	function handleSearch(e) {
-		if (SearchInput.current.value.trim()) {
-			getCountries(`https://restcountries.com/v3.1/name/${SearchInput.current.value.trim()}`);
-		} else {
-			getCountries(`https://restcountries.com/v3.1/all`);
-		}
+		let countryPath = data.find(el => el.name.common.toLowerCase().replace(/ /ig, "-") === location.pathname.slice(1).toLowerCase().replace(/ /ig, "-"));
+		
+		// if (SearchInput.current.value.trim()) {
+		// 	getCountries(`https://restcountries.com/v3.1/name/${SearchInput.current.value.trim()}`);
+		// } else {
+		// 	getCountries(`https://restcountries.com/v3.1/all`);
+		// }
 	}
 
 	return (

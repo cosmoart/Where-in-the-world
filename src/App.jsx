@@ -21,13 +21,21 @@ function App() {
 		setLoading(true);
 		fetch(url)
 			.then(res => res.json())
-			.then(data => setCountries(data))
+			.then(data => {
+				setCountries(data)
+				console.log(countries);
+				if (location.pathname !== "/") {
+					let countryPath = data.find(el => el.name.common.toLowerCase().replace(/ /ig, "-") === location.pathname.slice(1).toLowerCase().replace(/ /ig, "-"));
+					if (countryPath) setCountry(countryPath)
+				}
+			})
 			.catch(() => setCountries("Error"))
 			.finally(() => setLoading(false));
 	}
 
 	useEffect(() => {
-		getCountries("https://restcountries.com/v3.1/all");
+		getCountries("https://restcountries.com/v3.1/all")
+
 		let busy = false;
 		window.onscroll = function (e) {
 			if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !busy) {
@@ -47,19 +55,13 @@ function App() {
 			}
 		});
 
+
 	}, []);
 
 	return (
 		<>
 			<MainHeader />
 			{country && <CountryDetails country={country} setCountry={setCountry} />}
-			<Router>
-				<Routes>
-					<Route path='/' element={<h3>Home</h3>} />
-					<Route path='/:countryURL' />
-					<Route path='*' element={<Error404 />} />
-				</Routes>
-			</Router>
 			<CountriesForm getCountries={getCountries} />
 			<main className="flagsList grid gap-11 grid-cols-fill p-7 relative">
 				{loading
