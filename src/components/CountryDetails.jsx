@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
 
 export default function CountryDetails({ country = "", setCountry }) {
 	const [show, setShow] = useState(false);
-	let { countryURL } = useParams();
 
 	document.body.style.overflow = country === "" ? "auto" : "hidden";
 
 	useEffect(() => {
 		setShow(true);
-		if (!countryURL) {
-			document.title = `${country.name.common} - Where in the World?`
-			document.querySelector("link[rel~='icon']").href = country.flags.svg || "src/assets/favicon/favicon.svg"
-		}
+		document.title = `${country.name.common} - Where in the World?`
+		document.querySelector("link[rel~='icon']").href = country.flags.svg || "src/assets/favicon/favicon.svg"
 		history.pushState({ 'country_name': country.name.common }, "", country.name.common.replace(/ /ig, "-"))
 	}, [country])
 
@@ -27,7 +23,7 @@ export default function CountryDetails({ country = "", setCountry }) {
 
 	return (
 		<>
-			{!countryURL
+			{true
 				? <div className="fixed overflow-hidden w-full h-screen pointer-events-none z-20" >
 					< section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full dark:bg-verydarkblue pointer-events-auto h-full p-10 mt-16`
 					}>
@@ -56,7 +52,7 @@ export default function CountryDetails({ country = "", setCountry }) {
 						</article>
 					</section >
 				</div >
-				: <h1>{countryURL}</ h1>
+				: <h1>Error 404</ h1>
 			}
 		</>
 	)

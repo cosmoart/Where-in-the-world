@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Cards from './components/Cards';
 import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/CountryDetails';
