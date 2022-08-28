@@ -7,18 +7,21 @@
 		font-family: Nunito Sans;
 		src: url("./assets/fonts/NunitoSans-Light.ttf");
 		font-weight: 300;
+		font-display: swap;
 	}
 
 	@font-face {
 		font-family: Nunito Sans;
 		font-weight: 600;
 		src: url("./assets/fonts/NunitoSans-SemiBold.ttf");
+		font-display: swap;
 	}
 
 	@font-face {
 		font-family: Nunito Sans;
 		font-weight: 800;
 		src: url("./assets/fonts/NunitoSans-ExtraBold.ttf");
+		font-display: swap;
 	}
 
 	:focus {

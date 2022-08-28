@@ -13,7 +13,7 @@ export default function Cards({ countries, MAX_PAGES, setCountry }) {
 						<img src={item.flags.svg} alt={item.name.common + " flag"} className="h-1/2 object-cover w-full" loading="lazy" />
 						<section className="p-6 h-1/2">
 							<figcaption>
-								<h3 className="font-extrabold text-2xl my-3">{item.name.common}</h3>
+								<h2 className="font-extrabold text-2xl my-3">{item.name.common}</h2>
 							</figcaption>
 							<ul>
 								<li><b>Population:</b> {item.population.toLocaleString("en-US")}</li>
