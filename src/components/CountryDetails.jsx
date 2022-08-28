@@ -5,7 +5,8 @@ export default function CountryDetails({ country = "", setCountry }) {
 	const [show, setShow] = useState(false);
 	let { countryURL } = useParams();
 
-	document.querySelector("body").style.overflow = country === "" ? "auto" : "hidden";
+	console.log(country);
+	document.body.style.overflow = country === "" ? "auto" : "hidden";
 
 	useEffect(() => {
 		setShow(true);
@@ -29,7 +30,7 @@ export default function CountryDetails({ country = "", setCountry }) {
 					< section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full dark:bg-verydarkblue pointer-events-auto h-full p-10`
 					}>
 						<button className="p-3 dark:bg-darkblue rounded-[4px] hover:opacity-80 active:scale-95" onClick={handleBack}>Back</button>
-						<article className="flex justify-center gap-6 items-center flex-col sm:flex-row">
+						<article className="flex justify-center gap-6 items-center flex-col sm:flex-row max-w-6xl mx-auto">
 							<img src={country.flags.svg} alt={country.name.common + " flag"} className="sm:w-1/2" />
 							<div className="sm:w-1/2 p-5">
 								<h2 className="font-bold text-2xl my-8">{country.name.common}</h2>
@@ -43,10 +44,10 @@ export default function CountryDetails({ country = "", setCountry }) {
 									<li><b>Corruencies:</b> {Object.keys(country.currencies) || <i>No information</i>} </li>
 									<li><b>Languages:</b> {Object.values(country.languages).join(", ") || <i>No information</i>}</li>
 								</ul>
-								<ul>
+								<ul className="flex gap-2">
 									Border Countries:
 									{country.borders
-										? country.borders.map((item, index) => <li key={index + 521} className="p-4 rounded-[4px]">{item}</li>)
+										? country.borders.map((item, index) => <li key={index + 521} className="px-4 py-3 rounded-[4px] dark:bg-darkblue">{item}</li>)
 										: <i> No information</i>}
 								</ul>
 							</div>

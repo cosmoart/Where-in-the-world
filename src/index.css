@@ -21,9 +21,13 @@
 		src: url("./assets/fonts/NunitoSans-ExtraBold.ttf");
 	}
 
-	:focus-visible {
+	:focus {
 		outline: 3px dashed rgb(56, 189, 248);
 		outline-offset: 4px;
+	}
+
+	.using-mouse :focus {
+		outline: none;
 	}
 
 	.absolute-center {

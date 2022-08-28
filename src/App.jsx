@@ -5,7 +5,8 @@ import CountriesForm from './components/CountriesForm';
 import CountryDetails from './components/CountryDetails';
 import MainHeader from './components/MainHeader';
 import MainFooter from './components/MainFooter';
-import Loader from "./components/Loader"
+import Loader from "./components/Loader";
+import Error404 from "./components/Error404"
 
 function App() {
 	const MAX_PAGES = 24;
@@ -35,7 +36,17 @@ function App() {
 				setTimeout(() => busy = false, 600);
 			}
 		}
-		console.log(country);
+
+		document.body.addEventListener('mousedown', function () {
+			document.body.classList.add('using-mouse');
+		});
+
+		document.body.addEventListener('keydown', function (event) {
+			if (event.key === "tab") {
+				document.body.classList.remove('using-mouse');
+			}
+		});
+
 	}, []);
 
 	return (
@@ -45,8 +56,8 @@ function App() {
 			<Router>
 				<Routes>
 					<Route path='/' element={<h3>Home</h3>} />
-					<Route path='/:countryURL' element={<CountryDetails />} />
-					<Route path='*' element={<h3>Error 404</h3>} />
+					<Route path='/:countryURL' />
+					<Route path='*' element={<Error404 />} />
 				</Routes>
 			</Router>
 			<CountriesForm getCountries={getCountries} />

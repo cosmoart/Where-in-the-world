@@ -5,7 +5,7 @@ let prevScrollpos = window.pageYOffset;
 document.addEventListener("scroll", () => {
 	let currentScrollPos = window.pageYOffset;
 	let topPX = prevScrollpos > currentScrollPos ? "0" : "-200px";
-	topPX = document.querySelector("body").style.overflow === "hidden" ? "0" : "-200px"
+	if (document.querySelector("body").style.overflow === "hidden") topPX = "0";
 
 	document.querySelector(".navBar").style.top = topPX
 	prevScrollpos = currentScrollPos;
