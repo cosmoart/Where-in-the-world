@@ -6,7 +6,8 @@
 	"icons": [
 		{
 			"src": "./src/assets/favicon/favicon.svg",
-			"type": "image/svg"
+			"type": "image/svg",
+			"sizes": "512x512"
 		}
 	],
 	"start_url": "./",

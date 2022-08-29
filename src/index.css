@@ -38,6 +38,42 @@
 	}
 }
 
+/* ====== Input search ======= */
+
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	height: 1.1em;
+	width: 1.1em;
+	background: url(assets/icons/close.svg) no-repeat 50% 50%;
+	background-size: contain;
+}
+
+input[type="search"]:hover::-webkit-search-cancel-button {
+	opacity: .8;
+	cursor: pointer;
+}
+
+.dark input[type="search"]::-webkit-search-cancel-button {
+	filter: invert(1);
+}
+
+/*  */
+
+:disabled {
+	cursor: not-allowed;
+	opacity: .7;
+}
+
+.btnHover:not(:disabled):hover {
+	opacity: .8;
+}
+
+.btnHover:not(:disabled):active {
+	opacity: .8;
+	transform: scale(.95) translateY(-50%);
+}
+
+/* ============ SCROLL-BAR ========= */
 /* width */
 ::-webkit-scrollbar {
 	width: 10px;
