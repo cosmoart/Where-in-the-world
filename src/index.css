@@ -33,13 +33,16 @@
 		outline: none;
 	}
 
+	.appear {
+		@apply  !translate-y-0 !opacity-100 !scale-100
+	}
+
 	.absolute-center {
 		@apply absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
 	}
 }
 
 /* ====== Input search ======= */
-
 input[type="search"]::-webkit-search-cancel-button {
 	-webkit-appearance: none;
 	height: 1.1em;
@@ -57,7 +60,7 @@ input[type="search"]:hover::-webkit-search-cancel-button {
 	filter: invert(1);
 }
 
-/*  */
+/* ======== Btn Disable ========= */
 
 :disabled {
 	cursor: not-allowed;

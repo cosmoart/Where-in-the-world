@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+
 export default function Cards({ countries, MAX_PAGES, setCountry }) {
+
+	let observer = new IntersectionObserver(cards => {
+		cards.forEach(card => {
+			if (card.isIntersecting) card.target.classList.add("appear")
+		})
+	}, { threshold: 0.2 });
+
+	useEffect(() => {
+		document.querySelectorAll(".countryCard").forEach(card => observer.observe(card))
+	}, [MAX_PAGES, countries]);
 
 	function handleCard(card) {
 		setCountry(card);
@@ -9,7 +21,7 @@ export default function Cards({ countries, MAX_PAGES, setCountry }) {
 
 			if (index < MAX_PAGES) {
 				return (
-					<figure key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-3xl" onClick={() => handleCard(item)}>
+					<figure key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-3xl opacity-40 translate-y-6 scale-75" id={"countryCard" + index} onClick={() => handleCard(item)}>
 						<img src={item.flags.svg} alt={item.name.common + " flag"} className="h-1/2 object-cover w-full" />
 						<section className="p-6 h-1/2">
 							<figcaption>

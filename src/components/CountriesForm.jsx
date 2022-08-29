@@ -32,7 +32,7 @@ export default function CountriesForm({ setCountries, allCountries }) {
 					<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" /></svg>
 				</button>
 			</div>
-			<select name="region" onChange={handleRegion} className="dark:bg-darkblue p-2 rounded-[4px]" disabled={allCountries[0] ? false : true}>
+			<select name="region" onChange={handleRegion} className="dark:bg-darkblue py-2 px-4 w-44 rounded-[4px]" disabled={allCountries[0] ? false : true}>
 				<option value="" defaultValue hidden>Filter by Region</option>
 				<option value="africa">Africa</option>
 				<option value="america">America</option>

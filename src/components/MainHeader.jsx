@@ -12,7 +12,7 @@ document.addEventListener("scroll", () => {
 
 export default function MainHeader() {
 	return (
-		<header className='bg-white dark:bg-darkblue sticky z-30 top-0 flex items-center justify-between py-5 px-7 transition-all shadow-3xl' id="mainHeader">
+		<header className='bg-white dark:bg-darkblue sticky z-30 top-0 flex items-center justify-between py-5 px-10 transition-all shadow-3xl' id="mainHeader">
 			<h1 className="text-2xl font-extrabold"><a href="/">Where in the World?</a></h1>
 			<ThemeBtn />
 		</header>

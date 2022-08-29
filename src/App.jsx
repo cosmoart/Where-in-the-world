@@ -41,12 +41,11 @@ function App() {
 			if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !busy) {
 				setMaxPages(max => max + MAX_PAGES);
 				busy = true;
-				console.log(window.scrollY, document.querySelector(".countryCard").offsetTop);
 				setTimeout(() => busy = false, 600);
 			}
-			document.querySelectorAll(".countryCard").forEach(item => {
-				if (window.scrollY >= item.offsetTop) item.style.outline = "4px solid red"
-			})
+			// document.querySelectorAll(".countryCard").forEach(item => {
+			// 	if (window.scrollY >= item.offsetTop) item.classList.add("appear")
+			// })
 		})
 
 		// Show the :active outline only in key down
