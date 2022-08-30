@@ -61,7 +61,6 @@ input[type="search"]:hover::-webkit-search-cancel-button {
 }
 
 /* ======== Btn Disable ========= */
-
 :disabled {
 	cursor: not-allowed;
 	opacity: .7;
