@@ -21,16 +21,16 @@ export default function Cards({ countries, MAX_PAGES, setCountry }) {
 
 			if (index < MAX_PAGES) {
 				return (
-					<figure key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-3xl opacity-40 translate-y-6 scale-75" id={"countryCard" + index} onClick={() => handleCard(item)}>
+					<figure key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:!scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-3xl opacity-40 translate-y-6 scale-75" id={"countryCard" + index} onClick={() => handleCard(item)}>
 						<img src={item.flags.svg} alt={item.name.common + " flag"} className="h-1/2 object-cover w-full" />
 						<section className="p-6 h-1/2">
 							<figcaption>
 								<h2 className="font-extrabold text-2xl my-3">{item.name.common}</h2>
 							</figcaption>
 							<ul>
-								<li><b>Population:</b> {item.population.toLocaleString("en-US")}</li>
-								<li><b>Region:</b> {item.region}</li>
-								<li><b>Capital:</b> {item.capital || "Without name"}</li>
+								<li><b>Population:</b> {item.population.toLocaleString("en-US") || <i>No information</i>}</li>
+								<li><b>Region:</b> {item.region || <i>No information</i>}</li>
+								<li><b>Capital:</b> {item.capital || <i>No information</i>}</li>
 							</ul>
 						</section>
 					</figure>

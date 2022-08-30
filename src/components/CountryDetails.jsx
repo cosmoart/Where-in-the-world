@@ -25,27 +25,30 @@ export default function CountryDetails({ country = "", setCountry }) {
 		<>
 			{true
 				? <div className="fixed overflow-hidden w-full h-screen pointer-events-none z-20" >
-					< section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full dark:bg-verydarkblue pointer-events-auto h-full p-10 mt-16`
+					< section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full bg-white dark:bg-verydarkblue pointer-events-auto h-full py-14 px-20 mt-16`
 					}>
-						<button className="p-3 dark:bg-darkblue rounded-[4px] hover:opacity-80 active:scale-95" onClick={handleBack}>Back</button>
-						<article className="flex justify-center gap-6 items-center flex-col sm:flex-row max-w-6xl mx-auto">
-							<img src={country.flags.svg} alt={country.name.common + " flag"} className="sm:w-1/2" />
+						<button className="py-2 flex gap-3 px-6 mb-10 text-[15px] items-center dark:bg-darkblue rounded-[4px] hover:opacity-80 active:scale-95 shadow-lg" onClick={handleBack}>
+							<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.328 11v2H7.5l3.243 3.243-1.415 1.414L3.672 12l5.656-5.657 1.415 1.414L7.5 11h12.828Z" fill="currentColor" /></svg>
+							Back
+						</button>
+						<article className="flex justify-between gap-6 items-center flex-col sm:flex-row  w-full">
+							<img src={country.flags.svg} alt={country.name.common + " flag"} className="sm:w-1/2 object-contain" />
 							<div className="sm:w-1/2 p-5">
 								<h2 className="font-bold text-2xl my-8">{country.name.common}</h2>
 								<ul className="sm:columns-2">
-									<li><b>Native Name:</b> {Object.values(country.name.nativeName)[0].common || <i>No information</i>} </li>
-									<li><b>Population:</b> {country.population.toLocaleString("en-US") || <i>No information</i>} </li>
-									<li><b>Region:</b> {country.region || <i>No information</i>} </li>
-									<li><b>Sub Region:</b> {country.subregion || <i>No information</i>} </li>
-									<li><b>Capital:</b> {country.capital.map((name) => name) || <i>No information</i>}</li>
-									<li><b>Top Level Domain: </b> {country.tld || <i>No information</i>}</li>
-									<li><b>Corruencies:</b> {Object.keys(country.currencies) || <i>No information</i>} </li>
-									<li><b>Languages:</b> {Object.values(country.languages).join(", ") || <i>No information</i>}</li>
+									<li className="my-1"><b>Native Name:</b> {Object.values(country.name.nativeName)[0].common || <i>No information</i>} </li>
+									<li className="my-1"><b>Population:</b> {country.population.toLocaleString("en-US") || <i>No information</i>} </li>
+									<li className="my-1"><b>Region:</b> {country.region || <i>No information</i>} </li>
+									<li className="my-1"><b>Sub Region:</b> {country.subregion || <i>No information</i>} </li>
+									<li className="my-1"><b>Capital:</b> {country.capital.map((name) => name) || <i>No information</i>}</li>
+									<li className="my-1"><b>Top Level Domain: </b> {country.tld || <i>No information</i>}</li>
+									<li className="my-1"><b>Corruencies:</b> {Object.keys(country.currencies) || <i>No information</i>} </li>
+									<li className="my-1"><b>Languages:</b> {Object.values(country.languages).join(", ") || <i>No information</i>}</li>
 								</ul>
-								<ul className="flex gap-2">
-									Border Countries:
+								<ul className="flex gap-2 flex-wrap">
+									<b>Border Countries:</b>
 									{country.borders
-										? country.borders.map((item, index) => <li key={index + 521} className="px-4 py-3 rounded-[4px] dark:bg-darkblue">{item}</li>)
+										? country.borders.map((item, index) => <li key={index + 521} className="px-6 py-1 rounded-[4px] dark:bg-darkblue shadow-lg">{item}</li>)
 										: <i> No information</i>}
 								</ul>
 							</div>

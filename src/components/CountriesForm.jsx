@@ -39,6 +39,7 @@ export default function CountriesForm({ setCountries, allCountries }) {
 				<option value="asia">Asia</option>
 				<option value="europe">Europe</option>
 				<option value="oceania">Oceania</option>
+				<option value="antarctic">Antarctic</option>
 			</select>
 		</form>
 	)

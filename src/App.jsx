@@ -43,9 +43,6 @@ function App() {
 				busy = true;
 				setTimeout(() => busy = false, 600);
 			}
-			// document.querySelectorAll(".countryCard").forEach(item => {
-			// 	if (window.scrollY >= item.offsetTop) item.classList.add("appear")
-			// })
 		})
 
 		// Show the :active outline only in key down
