@@ -65,7 +65,7 @@ function App() {
 			<main className="flagsList grid gap-11 grid-cols-fill px-10 relative">
 				{loading
 					? <Loader />
-					: <Cards countries={countries} MAX_PAGES={maxPages} setCountry={setCountry} />
+					: <Cards countries={countries} MAX_PAGES={maxPages} setCountry={setCountry} getCountries={getCountries} />
 				}
 			</main>
 			<MainFooter />
