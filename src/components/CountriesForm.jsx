@@ -5,26 +5,31 @@ export default function CountriesForm({ setCountries, allCountries }) {
 	const [queries, setQueries] = useState({ searchQuery: null, regionQuery: null });
 
 	function handleRegion(e) {
+		if (e.target.value === "all") {
+			setQueries({ ...queries, regionQuery: null })
+			return setCountries(allCountries)
+		}
 		setQueries({ ...queries, regionQuery: e.target.value });
-		let countriesResult = allCountries.filter(country => country.region.toLowerCase().includes(e.target.value));
+		let countriesResult = allCountries.filter(country => country.region.toLowerCase().includes(e.target.value) && (queries.searchQuery ? country.name.common.toLowerCase().includes(queries.searchQuery) : true));
 		setCountries(countriesResult);
 	}
 
 	function handleSearch() {
-		console.log(queries.regionQuery);
 		setQueries({ ...queries, searchQuery: SearchInput.current.value.trim().toLowerCase() })
-
 		if (SearchInput.current.value.trim()) {
-			let countriesResult = allCountries.filter(country => country.name.common.toLowerCase().includes(SearchInput.current.value.trim().toLowerCase()) && (queries.regionQuery ? country.region.toLowerCase().includes(queries.regionQuery) : true))
+			let countriesResult = allCountries.filter(country =>
+				country.name.common.toLowerCase().includes(SearchInput.current.value.trim().toLowerCase()) && (queries.regionQuery ? country.region.toLowerCase().includes(queries.regionQuery) : true));
+			if (countriesResult.length <= 0) return setCountries("notfound")
 			setCountries(countriesResult);
 		} else {
-			setCountries(allCountries);
+			setCountries(allCountries)
 		}
 	}
+
 	function handleToggleIcon() {
 		document.querySelector("#selectIcon").classList.toggle("rotate-90");
 		document.addEventListener("click", (e) => {
-			if (e.target.name !== "region") document.querySelector("#selectIcon").classList.toggle("rotate-90")
+			if (e.target.name !== "region") document.querySelector("#selectIcon").classList.remove("rotate-90")
 		})
 	}
 
@@ -39,6 +44,7 @@ export default function CountriesForm({ setCountries, allCountries }) {
 			<div className="relative shadow-3xl">
 				<select name="region" onChange={handleRegion} className={`dark:bg-darkblue py-4 px-4 sm:w-48 rounded-[4px] appearance-none w-full h-full`} disabled={allCountries[0] ? false : true} onClick={handleToggleIcon}>
 					<option defaultValue hidden>Filter by Region</option>
+					<option value="all">All</option>
 					<option value="africa">Africa</option>
 					<option value="america">America</option>
 					<option value="asia">Asia</option>
