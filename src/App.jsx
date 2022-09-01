@@ -62,7 +62,7 @@ function App() {
 			<MainHeader />
 			{country && <CountryDetails country={country} setCountry={setCountry} />}
 			<CountriesForm setCountries={setCountries} allCountries={allCountries} />
-			<main className="flagsList grid gap-11 grid-cols-fill px-10 relative">
+			<main className="flagsList grid gap-14 quadHD:gap-[75px] grid-cols-fill px-7 sm:px-16 quadHD:px-20 relative">
 				{loading
 					? <Loader />
 					: <Cards countries={countries} MAX_PAGES={maxPages} setCountry={setCountry} getCountries={getCountries} />

@@ -25,8 +25,7 @@ export default function CountryDetails({ country = "", setCountry }) {
 		<>
 			{true
 				? <div className="fixed overflow-hidden w-full h-screen pointer-events-none z-20" >
-					< section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full bg-white dark:bg-verydarkblue pointer-events-auto h-full py-14 px-20 mt-16`
-					}>
+					< section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full bg-white dark:bg-verydarkblue pointer-events-auto h-full py-14 px-8 md:px-20 mt-16`}>
 						<button className="py-2 flex gap-3 px-6 mb-10 text-[15px] items-center dark:bg-darkblue rounded-[4px] hover:opacity-80 active:scale-95 shadow-lg" onClick={handleBack}>
 							<svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.328 11v2H7.5l3.243 3.243-1.415 1.414L3.672 12l5.656-5.657 1.415 1.414L7.5 11h12.828Z" fill="currentColor" /></svg>
 							Back

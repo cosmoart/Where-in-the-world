@@ -24,9 +24,9 @@ export default function Cards({ countries, MAX_PAGES, setCountry, getCountries }
 						<img src={item.flags.svg} alt={item.name.common + " flag"} className="h-1/2 object-cover w-full" />
 						<section className="p-6 h-1/2">
 							<figcaption>
-								<h2 className="font-extrabold text-2xl my-3">{item.name.common}</h2>
+								<h2 className="font-extrabold text-xl overflow-hidden max-h-[53px]">{item.name.common}</h2>
 							</figcaption>
-							<ul>
+							<ul className="my-1">
 								<li><b>Population:</b> {item.population.toLocaleString("en-US") || <i>No information</i>}</li>
 								<li><b>Region:</b> {item.region || <i>No information</i>}</li>
 								<li><b>Capital:</b> {item.capital || <i>No information</i>}</li>
