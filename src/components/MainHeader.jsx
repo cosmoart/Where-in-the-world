@@ -3,11 +3,13 @@ import ThemeBtn from "./ThemeBtn";
 let prevScrollpos = window.pageYOffset;
 
 document.addEventListener("scroll", () => {
-	let currentScrollPos = window.pageYOffset;
-	let topPX = prevScrollpos > currentScrollPos ? "0" : "-200px";
-	if (document.body.style.overflow === "hidden") topPX = "0";
-	document.getElementById("mainHeader").style.top = topPX;
-	prevScrollpos = currentScrollPos;
+	if (document.body.style.overflow !== "hidden") {
+		let currentScrollPos = window.pageYOffset;
+		document.getElementById("mainHeader").style.top = prevScrollpos > currentScrollPos ? "0" : "-200px";
+		prevScrollpos = currentScrollPos;
+	} else {
+		document.getElementById("mainHeader").style.top = 0;
+	}
 })
 
 export default function MainHeader() {

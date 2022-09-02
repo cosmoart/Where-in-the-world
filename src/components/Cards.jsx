@@ -14,6 +14,8 @@ export default function Cards({ countries, MAX_PAGES, setCountry, getCountries }
 
 	function handleCard(card) {
 		setCountry(card);
+		document.body.style.overflow = "hidden";
+		document.getElementById("mainHeader").style.top = "0";
 	}
 
 	if (countries === "notfound") return (

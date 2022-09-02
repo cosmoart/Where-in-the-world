@@ -38,7 +38,7 @@ export default function CountriesForm({ setCountries, allCountries }) {
 			<div className="relative sm:w-[45%] sm:max-w-[30rem]">
 				<input ref={SearchInput} type="search" name="country" placeholder='Search for a country...' onChange={handleSearch} className="px-3 py-4 h-full shadow-3xl pl-14 dark:bg-darkblue rounded-[4px] w-full sm:max-w-lg" disabled={allCountries[0] ? false : true} />
 				<button type="button" aria-label='Search' onClick={handleSearch} className="absolute left-5 top-1/2 -translate-y-1/2 btnHover" disabled={allCountries[0] ? false : true}>
-					<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" /></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" /></svg>
 				</button>
 			</div>
 			<div className="relative shadow-3xl">
