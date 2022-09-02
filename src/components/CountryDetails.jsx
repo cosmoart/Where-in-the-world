@@ -48,7 +48,9 @@ export default function CountryDetails({ country, setCountry }) {
 						<ul className="flex gap-2 flex-wrap mt-10 mb-20 sm:mb-0">
 							<b>Border Countries:</b>
 							{country.borders
-								? country.borders.map((item, index) => <li key={index + 521} className="px-6 py-1 rounded-[4px] dark:bg-darkblue shadow-lg text-sm">{item}</li>)
+								? country.borders.map((item, index) =>
+									<li key={index + 521} className="px-6 py-1 rounded-[4px] dark:bg-darkblue shadow-lg text-sm">{item}</li>
+								)
 								: <i> No information</i>
 							}
 						</ul>

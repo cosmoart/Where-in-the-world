@@ -55,7 +55,7 @@ function App() {
 	return (
 		<>
 			<MainHeader />
-			{country && <CountryDetails country={country} setCountry={setCountry} />}
+			{country && <CountryDetails country={country} setCountry={setCountry} allCountries={allCountries} />}
 			<CountriesForm setCountries={setCountries} allCountries={allCountries} />
 			<main className="flagsList grid gap-14 quadHD:gap-[75px] grid-cols-fill px-7 sm:px-16 quadHD:px-20 relative">
 				{loading

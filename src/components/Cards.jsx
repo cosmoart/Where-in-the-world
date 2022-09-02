@@ -19,7 +19,7 @@ export default function Cards({ countries, maxPages, setCountry, getCountries })
 		</article>
 	)
 	if (countries.error || countries.message) return (
-		<article className="absolute-center flex flex-col countrys-center gap-4">
+		<article className="absolute-center flex flex-col countrys-center gap-4 items-center">
 			<svg className="w-[10rem] h-[5rem]" fill="#ff4848" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M23,7.44365081 L23,16.5563492 L16.5563492,23 L7.44365081,23 L1,16.5563492 L1,7.44365081 L7.44365081,1 L16.5563492,1 L23,7.44365081 Z M15.7279221,3 L8.27207794,3 L3,8.27207794 L3,15.7279221 L8.27207794,21 L15.7279221,21 L21,15.7279221 L21,8.27207794 L15.7279221,3 Z M12.0003283,17.9983464 C11.4478622,17.9983464 11,17.5506311 11,16.9983464 C11,16.4460616 11.4478622,15.9983464 12.0003283,15.9983464 C12.5527943,15.9983464 13.0006565,16.4460616 13.0006565,16.9983464 C13.0006565,17.5506311 12.5527943,17.9983464 12.0003283,17.9983464 Z M11.0029544,5.99834639 L13.0036109,5.99834639 L13.0036109,13.9983464 L11.0029544,13.9983464 L11.0029544,5.99834639 Z" fillRule="evenodd" /></svg>
 			<h2 className="text-center text-xl font-extrabold">{countries.message || countries.error || "Error"}</h2>
 			<button className="dark:bg-darkblue py-2 px-6 rounded-sm hover:opacity-80 cursor-pointer" onClick={() => getCountries("https://restcountries.com/v3.1/all")}>Retry</button>
