@@ -1,13 +1,13 @@
 {
 	"name": "Where in the World?",
 	"short_name": "World Countries",
-	"description": "My App description",
+	"description": "All the information about all the countries in the world",
 	"lang": "en",
 	"icons": [
 		{
 			"src": "./src/assets/favicon/favicon.svg",
 			"type": "image/svg",
-			"sizes": "512x512"
+			"sizes": "150x150"
 		}
 	],
 	"start_url": "./",
