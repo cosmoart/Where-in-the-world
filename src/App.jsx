@@ -29,7 +29,7 @@ function App() {
 					if (countryPath) setCountry(countryPath)
 				}
 			})
-			.catch(() => setCountries("Error"))
+			.catch(() => setCountries({ "error": "Oops... Something is wrong" }))
 			.finally(() => setLoading(false));
 	}
 
@@ -60,7 +60,7 @@ function App() {
 			<main className="flagsList grid gap-14 quadHD:gap-[75px] grid-cols-fill px-7 sm:px-16 quadHD:px-20 relative">
 				{loading
 					? <img src={loaderSVG} alt="Loading..." className="w-24 absolute-center" />
-					: <Cards countries={countries} MAX_PAGES={maxPages} setCountry={setCountry} getCountries={getCountries} />
+					: <Cards countries={countries} maxPages={maxPages} setCountry={setCountry} getCountries={getCountries} />
 				}
 			</main>
 			<MainFooter />

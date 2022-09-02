@@ -10,6 +10,7 @@ export default function CountriesForm({ setCountries, allCountries }) {
 			return setCountries(allCountries)
 		}
 		setQueries({ ...queries, regionQuery: e.target.value });
+
 		let countriesResult = allCountries.filter(country => country.region.toLowerCase().includes(e.target.value) && (queries.searchQuery ? country.name.common.toLowerCase().includes(queries.searchQuery) : true));
 		setCountries(countriesResult);
 	}
@@ -19,7 +20,8 @@ export default function CountriesForm({ setCountries, allCountries }) {
 		if (SearchInput.current.value.trim()) {
 			let countriesResult = allCountries.filter(country =>
 				country.name.common.toLowerCase().includes(SearchInput.current.value.trim().toLowerCase()) && (queries.regionQuery ? country.region.toLowerCase().includes(queries.regionQuery) : true));
-			if (countriesResult.length <= 0) return setCountries("notfound")
+
+			if (countriesResult.length <= 0) return setCountries({ "notFound": "No results found" });
 			setCountries(countriesResult);
 		} else {
 			setCountries(allCountries)
