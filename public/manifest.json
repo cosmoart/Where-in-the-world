@@ -5,9 +5,9 @@
 	"lang": "en",
 	"icons": [
 		{
-			"src": "./favicon.svg",
+			"src": "favicon.svg",
 			"type": "image/svg",
-			"sizes": "150x150",
+			"sizes": "192x192",
 			"purpose": "any"
 		}
 	],
