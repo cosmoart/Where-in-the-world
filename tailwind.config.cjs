@@ -17,9 +17,6 @@ module.exports = {
 				"verylightgray": "#fafafa",
 				"white": "#ffffff"
 			},
-			boxShadow: {
-				"3xl": "-6px 6px 20px 3px rgb(0 0 0 / 15%);"
-			},
 			screens: {
 				"quadHD": "1400px"
 			}

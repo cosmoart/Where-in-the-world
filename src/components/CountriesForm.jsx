@@ -38,13 +38,13 @@ export default function CountriesForm({ setCountries, allCountries }) {
 	return (
 		<form className="flex justify-between py-12 px-7 sm:px-16 quadHD:px-20 sm:flex-row flex-col gap-2">
 			<div className="relative sm:w-[45%] sm:max-w-[30rem]">
-				<input ref={SearchInput} type="search" name="country" placeholder='Search for a country...' onChange={handleSearch} className="px-3 py-4 h-full shadow-2xl pl-14 dark:bg-darkblue rounded-[4px] w-full sm:max-w-lg" disabled={allCountries[0] ? false : true} />
+				<input ref={SearchInput} type="search" name="country" placeholder='Search for a country...' onChange={handleSearch} className="px-3 py-4 h-full shadow-md pl-14 dark:bg-darkblue rounded-[4px] w-full sm:max-w-lg" disabled={allCountries[0] ? false : true} />
 				<button type="button" aria-label='Search' onClick={handleSearch} className="absolute left-5 top-1/2 -translate-y-1/2 btnHover" disabled={allCountries[0] ? false : true}>
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" /></svg>
 				</button>
 			</div>
-			<div className="relative shadow-2xl">
-				<select name="region" onChange={handleRegion} className={`dark:bg-darkblue py-4 px-4 sm:w-48 rounded-[4px] appearance-none w-full h-full`} disabled={allCountries[0] ? false : true} onClick={handleToggleIcon} aria-label="Filter by Region">
+			<div className="relative shadow-md">
+				<select name="region" onChange={handleRegion} className={`bg-white dark:bg-darkblue py-4 px-4 sm:w-48 rounded-[4px] appearance-none w-full h-full`} disabled={allCountries[0] ? false : true} onClick={handleToggleIcon} aria-label="Filter by Region">
 					<option defaultValue hidden>Filter by Region</option>
 					<option value="all">All</option>
 					<option value="africa">Africa</option>
