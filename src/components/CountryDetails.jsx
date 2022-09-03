@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function CountryDetails({ country, setCountry }) {
+export default function CountryDetails({ country, setCountry, allCountries }) {
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
@@ -24,6 +24,8 @@ export default function CountryDetails({ country, setCountry }) {
 		document.getElementById("mainHeader").style.top = "-200px";
 	}
 
+	let borders = country.borders ? country.borders.map(item => allCountries.find(i => i.cca3 === item)) : undefined
+
 	return (
 		<div className="fixed overflow-hidden w-full h-screen pointer-events-none z-20" >
 			< section className={`absolute top-0 ${show ? "right-0" : "-right-full"} transition-all w-full bg-white dark:bg-verydarkblue pointer-events-auto h-full py-14 px-8 md:px-20 mt-[104px] sm:mt-16 overflow-auto`}>
@@ -45,15 +47,15 @@ export default function CountryDetails({ country, setCountry }) {
 							<li className="my-1"><b>Corruencies:</b> {Object.keys(country.currencies) || <i>No information</i>} </li>
 							<li className="my-1"><b>Languages:</b> {Object.values(country.languages).join(", ") || <i>No information</i>}</li>
 						</ul>
-						<ul className="flex gap-2 flex-wrap mt-10 mb-20 sm:mb-0">
+						<div className="flex gap-2 flex-wrap mt-10 mb-20 sm:mb-0">
 							<b>Border Countries:</b>
-							{country.borders
-								? country.borders.map((item, index) =>
-									<li key={index + 521} className="px-6 py-1 rounded-[4px] dark:bg-darkblue shadow-lg text-sm">{item}</li>
+							{borders
+								? borders.map((item, index) =>
+									<button key={index + 521} className="hover:opacity-80 active:scale-95 px-6 py-1 rounded-[4px] dark:bg-darkblue shadow-lg text-sm" onClick={() => setCountry(item)}>{item.name.common}</button>
 								)
 								: <i> No information</i>
 							}
-						</ul>
+						</div>
 					</div>
 				</article>
 			</section >
