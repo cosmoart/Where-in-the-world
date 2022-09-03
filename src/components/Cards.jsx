@@ -27,7 +27,7 @@ export default function Cards({ countries, maxPages, setCountry, getCountries })
 	)
 
 	return countries.slice(0, maxPages).map((country, index) =>
-		<div key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:!scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-2xl opacity-40 translate-y-6 scale-75 max-h-[25rem]" onClick={() => setCountry(country)}>
+		<div key={index + 105} tabIndex="0" className="countryCard bg-white dark:bg-darkblue hover:!scale-105 transition-all rounded-md overflow-hidden cursor-pointer shadow-2xl opacity-40 translate-y-6 scale-75 max-h-[25rem] max-w-sm mx-auto" onClick={() => setCountry(country)}>
 			<img src={country.flags.svg} alt={country.name.common + " flag"} className="h-1/2 object-cover w-full" />
 			<section className="p-6 h-1/2">
 				<h2 title={country.name.common} className="font-extrabold text-xl overflow-hidden max-h-[53px]">{country.name.common}</h2>
