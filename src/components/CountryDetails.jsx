@@ -6,7 +6,7 @@ export default function CountryDetails({ country, setCountry, allCountries }) {
 	useEffect(() => {
 		setShow(true);
 		document.title = `${country.name.common} - Where in the World?`
-		document.querySelector("link[rel~='icon']").href = country.flags.svg || "src/assets/favicon/favicon.svg"
+		document.querySelector("link[rel~='icon']").href = country.flags.svg || "favicon.svg"
 		history.pushState({ 'country_name': country.name.common }, "", country.name.common.replace(/ /ig, "-"));
 
 		document.body.style.overflow = "hidden";
