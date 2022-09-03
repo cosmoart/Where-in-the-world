@@ -11,8 +11,8 @@
 			"purpose": "any"
 		}
 	],
-	"start_url": "./",
-	"scope": "./",
+	"start_url": "/",
+	"scope": "/",
 	"display": "standalone",
 	"orientation": "portrait-primary",
 	"background_color": "#202c37",
