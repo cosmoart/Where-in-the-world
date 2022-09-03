@@ -44,7 +44,7 @@ export default function CountriesForm({ setCountries, allCountries }) {
 				</button>
 			</div>
 			<div className="relative shadow-3xl">
-				<select name="region" onChange={handleRegion} className={`dark:bg-darkblue py-4 px-4 sm:w-48 rounded-[4px] appearance-none w-full h-full`} disabled={allCountries[0] ? false : true} onClick={handleToggleIcon}>
+				<select name="region" onChange={handleRegion} className={`dark:bg-darkblue py-4 px-4 sm:w-48 rounded-[4px] appearance-none w-full h-full`} disabled={allCountries[0] ? false : true} onClick={handleToggleIcon} ariaLabel="Filter by Region">
 					<option defaultValue hidden>Filter by Region</option>
 					<option value="all">All</option>
 					<option value="africa">Africa</option>
