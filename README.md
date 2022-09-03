@@ -100,4 +100,4 @@ I also added some new features like the theme switch button or the path handling
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 [live-page]: https://where-world.vercel.app
-[solution-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[solution-url]: https://www.frontendmentor.io/solutions/where-in-the-world-solution-_B3wLmeKnR
