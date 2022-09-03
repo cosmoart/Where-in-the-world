@@ -50,9 +50,6 @@ function App() {
 		document.body.addEventListener('keydown', (e) => {
 			if (e.key === "Tab") document.body.classList.remove('using-mouse');
 		});
-
-		if ('serviceWorker' in navigator) navigator.serviceWorker.register('/serviceWorker.js')
-
 	}, []);
 
 	return (
