@@ -17,7 +17,7 @@ export default function CountryDetails({ country, setCountry, allCountries }) {
 		setShow(false);
 		setCountry("");
 		document.title = `Where in the World?`;
-		document.querySelector("link[rel~='icon']").href = "src/assets/favicon/favicon.svg"
+		document.querySelector("link[rel~='icon']").href = "favicon.svg"
 		history.pushState({ 'country_name': 0 }, "", "/");
 
 		document.body.style.overflow = "auto";
