@@ -8,7 +8,7 @@
 
 # Where in the World?
 
-A website that allows you to search information about countries. This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
+A website that allows you to search information about countries. This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Made with the [Rest Countries API](https://restcountries.com)
 
 [Solution][solution-url] . [Live Page][live-page]
 
@@ -79,6 +79,7 @@ Additional features:
 -   [React](https://reactjs.org/)
 -   [Vite](https://vitejs.dev)
 -   [TailwindCSS](https://tailwindcss.com)
+-   [Rest Countries API](https://restcountries.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
