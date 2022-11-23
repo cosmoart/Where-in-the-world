@@ -38,14 +38,14 @@ export default function CountryDetails({ country, setCountry, allCountries }) {
 					<div className="sm:w-1/2 p-5">
 						<h2 className="font-bold text-2xl my-8">{country.name.common}</h2>
 						<ul className="sm:columns-2">
-							<li className="my-1"><b>Native Name:</b> {Object.values(country.name.nativeName)[0].common || <i>No information</i>} </li>
-							<li className="my-1"><b>Population:</b> {country.population.toLocaleString("en-US") || <i>No information</i>} </li>
+							<li className="my-1"><b>Native Name:</b> {country.name.nativeName && Object.values(country.name.nativeName)[0].common || <i>No information</i>} </li>
+							<li className="my-1"><b>Population:</b> {country.population && country.population.toLocaleString("en-US") || <i>No information</i>} </li>
 							<li className="my-1"><b>Region:</b> {country.region || <i>No information</i>} </li>
 							<li className="my-1"><b>Sub Region:</b> {country.subregion || <i>No information</i>} </li>
-							<li className="my-1"><b>Capital:</b> {country.capital.join(", ") || <i>No information</i>}</li>
+							<li className="my-1"><b>Capital:</b> {country.capital && country.capital.join(", ") || <i>No information</i>}</li>
 							<li className="my-1"><b>Top Level Domain: </b> {country.tld || <i>No information</i>}</li>
-							<li className="my-1"><b>Corruencies:</b> {Object.keys(country.currencies) || <i>No information</i>} </li>
-							<li className="my-1"><b>Languages:</b> {Object.values(country.languages).join(", ") || <i>No information</i>}</li>
+							<li className="my-1"><b>Corruencies:</b> {country.currencies && Object.keys(country.currencies) || <i>No information</i>} </li>
+							<li className="my-1"><b>Languages:</b> {country.languages && Object.values(country.languages).join(", ") || <i>No information</i>}</li>
 						</ul>
 						<div className="flex gap-2 flex-wrap mt-10 mb-20 sm:mb-0">
 							<b>Border Countries:</b>
