@@ -93,10 +93,10 @@ I also added some new features like the theme switch button or the path handling
 
 ## Author
 
--   Email - [cosmohydra17@gmail.com](mailto:cosmohydra17@gmail.com)
 -   Instagram - [@cosmo_art0](https://www.instagram.com/cosmo_art0/)
 -   Twitter - [@CosmoArt0](https://twitter.com/cosmoart0)
 -   Frontend Mentor - [@CosmoArt](https://www.frontendmentor.io/profile/cosmoart)
+-   Website - [cosmoart.vercel.app](https://cosmoart.vercel.app)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
