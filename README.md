@@ -81,7 +81,7 @@ Additional features:
 -   [TailwindCSS](https://tailwindcss.com)
 -   [Rest Countries API](https://restcountries.com)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
 
 ### What I learned
 
@@ -89,7 +89,7 @@ This challenge was a great learning opportunity. I worked on different topics th
 
 I also added some new features like the theme switch button or the path handling, for the latter I initially thought to use React Router but due to some changes of ideas React Router was no longer necessary so I decided to do the path handling with vanilla JS.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
 
 ## Author
 
@@ -98,7 +98,7 @@ I also added some new features like the theme switch button or the path handling
 -   Frontend Mentor - [@CosmoArt](https://www.frontendmentor.io/profile/cosmoart)
 -   Website - [cosmoart.vercel.app](https://cosmoart.vercel.app)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right"><a href="#top">⬆️ Back to top</a></p>
 
 [live-page]: https://where-world.vercel.app
 [solution-url]: https://www.frontendmentor.io/solutions/where-in-the-world-solution-_B3wLmeKnR
